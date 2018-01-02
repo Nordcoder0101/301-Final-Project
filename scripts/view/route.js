@@ -1,9 +1,11 @@
 'use strict'
 
 // page('/', () => app.Book.fetchAll(app.bookView.initIndexPage))
-page('/', () => console.log('intro page'))
-page('/books/:id', ctx => app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage))
-page('/newbook',app.bookView.initNewBook)
-// page('/newbook',console.log('inside router'))
+// page('/weather/input', ctx => app.Weather.fetchWeather(ctx.params.id, app.weatherView.initOutputPage))
 
-page()
+page('/', () => app.Weather(app.weatherView.initLoginPage));
+page('/weather/form', () => app.Weather.initFormPage(app.Weather.submit));
+page('/weather/output', () => app.weatherView.fetchWeather(app.weatherView.initOutputPage));
+
+// page('*', '/');
+page();
