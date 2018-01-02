@@ -8,20 +8,32 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layouts.css">
     <link rel="stylesheet" href="styles/modules.css">
-   </head>
+  <script type="text/x-handlebars-template" id="">
+   <div class="container"> 
+     <div>
+         <h2>{{}}</h2>
+         <p>{{}}</p>
+         <p>{{}}</p>
+         <p>{{}}</p>
+     </div>
+   </div>
+ </script>
+</head>
 <body>
  <header>
  </header>
   <main>
     <h1>Welcome!</h1>
   </main>
-  <script type="text/x-handlebars-template" id="">
+  <script type="text/x-handlebars-template" id="weather-template">
     <div class="container"> 
      <div>
         <h2>{{}}</h2>
-        <p>{{}}</p>
-        <p>{{}}</p>
-        <p>{{}}</p>
+        <p>{{wind}}</p>
+        <p>{{precipitation}}</p>
+        <p>{{temperature}}</p>
+        <p>{{humidity}}</p>
+        <p>{{pressure}}</p>
      </div>
     </div>
   </script>
@@ -74,6 +86,5 @@
     <script src="scripts/view/route.js"></script>
     <script src="scripts/view/weather-view.js"></script>
     <script src="scripts/model/weather.js"></script>
-    
   </body>
 </html>
