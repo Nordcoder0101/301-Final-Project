@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>301 Final Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <script type="text/x-handlebars-template" id="weather-template">
+      <div class="container"> 
+       <div>
+        <h2>{{}}</h2>
+          <p>{{wind}}</p>
+          <p>{{precipitation}}</p>
+          <p>{{temperature}}</p>
+          <p>{{humidity}}</p>
+          <p>{{pressure}}</p>
+       </div>
+      </div>
+    </script>
+</head>
+<body>
+ <header>
+ </header>
+  <main>
+    <h1>Welcome!</h1>
+<section id="formview" class="login container">
+ <form class="form">
+ <h1>Login</h1>
+  <label>
+     <h2>Username</h2>
+     <input type="text" id="username" placeholder="username" required></input>
+  </label>
+  <label>
+     <h2>Password</h2>
+     <input type="text" id="password" placeholder="password" required></input>
+  </label>
+  <button type="submit" id="login-submit">SUBMIT</button>
+</form>
+</section>
+
+<section id="formview-two" class="input container">
+ <form class="form-two">
+  <label>
+     <h2>Address</h2>
+     <input type="text" id="address" placeholder="address" required></input>
+  </label>
+  <label>
+    <h2>City</h2>
+     <input type="text" id="city" placeholder="city" required></input>
+  </label>
+  <label>
+     <h2>State</h2>
+      <input type="text" id="state" placeholder="state" required></input>
+  </label>
+  <label>
+    <h2>Zipcode</h2>
+      <input type="text" id="zipcode" placeholder="zipcode" required></input>
+   </label>
+  <button type="submit" id="user-submit">SUBMIT</button>
+ </form>
+</section>
+
+<section id="formview-three" class="container output">
+  <p>what we want to show!</p>
+ </section>
+
+ <section id="about-us" class="container about">
+ <h1>About Us</h1>
+     <h3>Jordan</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+     <h3>Ashley</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+     <h3>Jesus</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+     <h3>Greg</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ </section>
+</main>
+  <footer>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+    <script src="scripts/view/route.js"></script>
+    <script src="scripts/view/weather-view.js"></script>
+    <script src="scripts/model/weather.js"></script>
+  </body>
+</html>
