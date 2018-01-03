@@ -2,18 +2,18 @@
 
 let weather = [];
 
-// function Weather (rawDataObj) {
-//     this.wind = rawDataObj.wind;
-//     this.precipitation = rawDataObj.precipitations;
-//     this.temperature = rawDataObj.temperature;
-//     this.humidity = rawDataObj.humidity;
-//     this.pressure = rawDataObj.pressure;
-// }
+function Weather(data) {
+    this.temperature = data.currently.temperature,
+    this.wind = data.currently.windSpeed,
+    this.precipitation = data.currently.precipProbability
+  };
 
-Weather.prototype.toHtml = function(){
-    let template = Handlebars.compile($('#weather-template').html())
-    return template(this)
-};
+// Weather.prototype.toHtml = function(){
+//     let template = Handlebars.compile($('#weather-template').html())
+//     return template(this)
+// };
+
+
 
 function updateWeather(data) {
 $.getJSON('http://localhost:3000/api/v1/weather')
@@ -21,4 +21,8 @@ $.getJSON('http://localhost:3000/api/v1/weather')
 .then(data => appendWeather(data))
 return 'done' 
 };
-    
+
+Weather.prototype.toHtml = function() {
+    let template = Handlebars.compile($('#weather-template').text())
+    console.log(this)
+    return template(this)};

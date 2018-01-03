@@ -9,16 +9,12 @@
     <link rel="stylesheet" href="styles/layouts.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script type="text/x-handlebars-template" id="weather-template">
-      <div class="container"> 
-       <div>
-        <h2>{{}}</h2>
+        <!-- <h2>{{}}</h2> -->
           <p>{{wind}}</p>
           <p>{{precipitation}}</p>
           <p>{{temperature}}</p>
-          <p>{{humidity}}</p>
-          <p>{{pressure}}</p>
-       </div>
-      </div>
+          <!-- <p>{{humidity}}</p> -->
+          <!-- <p>{{pressure}}</p> -->
     </script>
 </head>
 <body>
@@ -66,6 +62,12 @@
 <section id="formview-three" class="container output">
   <p>what we want to show!</p>
  </section>
+
+
+ <section class="weather-view">
+   <section id="weather-display"></section>
+ </section>
+
 
  <section id="about-us" class="container about">
  <h1>About Us</h1>

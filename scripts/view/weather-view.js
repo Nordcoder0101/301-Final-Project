@@ -31,12 +31,6 @@ var app = app || {};
     module.weatherView = weatherView;
   })(app);
 
-
-  function Weather(data) {
-    this.temp = data.currently.temperature,
-    this.windSpeed = data.currently.windSpeed,
-    this.chancePrecipt = data.currently.precipProbability
-  };
         
   function appendWeather(data) {
         // console.log(data)
@@ -44,5 +38,5 @@ var app = app || {};
         // console.log(data.currently.temperature)
         // console.log(data)
         ponyExpress = new Weather(data)
-        console.log(ponyExpress)
+        $("#weather-display").append(ponyExpress.toHtml())
         }
