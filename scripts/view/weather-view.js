@@ -10,7 +10,6 @@ var app = app || {};
 
       $('#login-submit').click(function(){ 
         weatherView.initFormPage();
-        console.log ('this clicked')
       })
 
     };
@@ -19,12 +18,16 @@ var app = app || {};
       $('.container').hide();
       $('.input').show();
       $('#form-two').on('submit');
+
+      $('#user-submit').click(function(){ 
+        weatherView.initOutputPage();
+      })      
     };
     
-    // weatherView.initOutputPage = function () {
-    //   $('.container').hide();
-    //   $('.output').show();
-    // };
+    weatherView.initOutputPage = function () {
+      $('.container').hide();
+      $('.output').show();
+    };
     
     weatherView.initLoginPage();
     // weatherView.initFormPage();
