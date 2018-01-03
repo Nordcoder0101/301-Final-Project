@@ -3,16 +3,22 @@ var weatherView = {};
 var app = app || {};
 
 (function(module) {
-    weatherView.initLoginPage = err => {
+    weatherView.initLoginPage = function () {
       $('.container').hide();
       $('.login').show();
-      $('.form').on('submit', callback);
+      $('.form').on('submit');
+
+      $('#login-submit').click(function(){ 
+        weatherView.initFormPage();
+        console.log ('this clicked')
+      })
+
     };
     
-    weatherView.initFormPage = callback => {
+    weatherView.initFormPage = function() {
       $('.container').hide();
       $('.input').show();
-      $('.form-two').on('submit', callback);
+      $('#form-two').on('submit');
     };
     
     // weatherView.initOutputPage = function () {
@@ -21,8 +27,8 @@ var app = app || {};
     // };
     
     weatherView.initLoginPage();
-    weatherView.initFormPage();
-    weatherView.initOutputPage();
+    // weatherView.initFormPage();
+    // weatherView.initOutputPage();
     
     module.weatherView = weatherView;
   })(app);
