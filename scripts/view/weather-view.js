@@ -36,18 +36,4 @@ var app = app || {};
     module.weatherView = weatherView;
   })(app);
 
-
-  function Weather(data) {
-    this.temp = data.currently.temperature,
-    this.windSpeed = data.currently.windSpeed,
-    this.chancePrecipt = data.currently.precipProbability
-  };
         
-  function appendWeather(data) {
-        // console.log(data)
-        // console.log(data.currently)
-        // console.log(data.currently.temperature)
-        // console.log(data)
-        ponyExpress = new Weather(data)
-        console.log(ponyExpress)
-        }

@@ -9,16 +9,9 @@
     <link rel="stylesheet" href="styles/layouts.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script type="text/x-handlebars-template" id="weather-template">
-      <div class="container"> 
-       <div>
-        <h2>{{}}</h2>
           <p>{{wind}}</p>
           <p>{{precipitation}}</p>
           <p>{{temperature}}</p>
-          <p>{{humidity}}</p>
-          <p>{{pressure}}</p>
-       </div>
-      </div>
     </script>
 </head>
 <body>
@@ -68,6 +61,12 @@
   <p>what we want to show!</p>
  </section>
 
+
+ <section class="weather-view">
+   <section id="weather-display"></section>
+ </section>
+
+
  <section id="about-us" class="container about">
  <h1>About Us</h1>
      <h3>Jordan</h3>
@@ -89,8 +88,8 @@
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-    <script src="scripts/view/route.js"></script>
     <script src="scripts/view/weather-view.js"></script>
     <script src="scripts/model/weather.js"></script>
+    <script src="scripts/view/route.js"></script>
   </body>
 </html>
