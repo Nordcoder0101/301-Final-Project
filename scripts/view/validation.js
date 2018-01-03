@@ -1,9 +1,9 @@
 $('#form-logi').submit(function(e){
     e.prevent.Default();
     var username = $('input#username').val();
-    var password = $('input#password').val();
+    var pword = $('input#password').val();
 
-    if (password == ""){
+    if (pword == ""){
         alert ("Please enter Password");
         $('#password').focus();
         return false;
@@ -15,13 +15,13 @@ $('#form-logi').submit(function(e){
         return false;
     }
 
-    if(username != '' && password != ''){
+    if(username != 'name' && pword != 'password'){
         $.ajax({
             url:
             type:
             data: {
-                username: username,
-                password: password
+                username: name,
+                pword: password
             },
             success: function(data) {
                 console.log (data);
