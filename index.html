@@ -20,7 +20,7 @@
   <main>
     <h1>Welcome!</h1>
 <section id="formview" class="login container">
- <form class="form">
+ <form class="form" id="form-login">
  <h1>Login</h1>
   <label>
      <h2>Username</h2>
@@ -28,7 +28,7 @@
   </label>
   <label>
      <h2>Password</h2>
-     <input type="text" id="password" placeholder="password"></input>
+     <input type="password" id="password" placeholder="password"></input>
   </label>
   <button type="submit" id="login-submit"><a href = "#formview-two">SUBMIT</a></button>
 </form>
@@ -36,10 +36,6 @@
 
 <section id="formview-two" class="input container">
  <form id="form-two">
-  <label>
-     <h2>Address</h2>
-     <input type="text" id="address" placeholder="address" required></input>
-  </label>
   <label>
     <h2>City</h2>
      <input type="text" id="city" placeholder="city" required></input>
@@ -91,5 +87,6 @@
     <script src="scripts/view/weather-view.js"></script>
     <script src="scripts/model/weather.js"></script>
     <script src="scripts/view/route.js"></script>
+    <script src="scripts/view/validation.js"></script>
   </body>
 </html>
