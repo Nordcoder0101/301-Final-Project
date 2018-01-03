@@ -10,20 +10,39 @@ var app = app || {};
       $('.form').on('submit', callback);
     };
 
+    
+    
     weatherView.initFormPage = callback => {
       $('.container').hide();
       $('.input').show();
-
+      
       $('.form-two').on('submit', callback);
     };
-
+    
     weatherView.initOutputPage = callback => {
-        $('.container').hide();
-        $('.output').show();
+      $('.container').hide();
+      $('.output').show();
     };
-
+    
     weatherView.initLoginPage();
     weatherView.initFormPage();
     weatherView.initOutputPage();
+    
     module.weatherView = weatherView;
-})(app);
+  })(app);
+
+
+  function Weather(data) {
+    this.temp = data.currently.temperature,
+    this.windSpeed = data.currently.windSpeed,
+    this.chancePrecipt = data.currently.precipProbability
+  };
+        
+  function appendWeather(data) {
+        // console.log(data)
+        // console.log(data.currently)
+        // console.log(data.currently.temperature)
+        // console.log(data)
+        ponyExpress = new Weather(data)
+        console.log(ponyExpress)
+        }
