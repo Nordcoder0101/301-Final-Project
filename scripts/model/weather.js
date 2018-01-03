@@ -1,5 +1,8 @@
 'use strict'
 
+var app = app || {};
+var _API_URL_ = 'http://localhost:3000';
+
 let weather = [];
 
 function Weather(data) {
