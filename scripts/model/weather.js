@@ -4,6 +4,8 @@ var app = app || {};
 var _API_URL_ = 'http://localhost:3000';
 
 let weather = [];
+let __API_URL__ = 'https://accounts-weather-app.herokuapp.com'
+// let __API_URL__ = 'http://localhost:3000'
 
 function Weather(data) {
     this.temperature = data.currently.temperature
@@ -16,6 +18,11 @@ Weather.prototype.toHtml = function(){
     console.log('toHtml', template(this))
     return template(this)
 };
+
+function findAccounts(){
+    $.get(`${__API_URL__}/api/v1/accounts`)
+    .then(x => console.log(x[0]))
+}
 
 function appendWeather(data) {
     let ponyExpress = new Weather(data)
@@ -32,7 +39,7 @@ function findLocation(zip) {
 
 function updateWeather(lat,long) {
     console.log('lat: ',lat,'long: ',long)
-    return $.getJSON('http://localhost:3000/api/v1/weather',{
+    return $.getJSON(`${__API_URL__}/api/v1/weather`,{
         a: lat,
         b: long
     })
