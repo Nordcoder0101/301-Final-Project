@@ -6,7 +6,7 @@ var app = app || {};
     weatherView.initLoginPage = err => {
       $('.container').hide();
       $('.login').show();
-
+     
       $('.form').on('submit', callback);
     };
 
@@ -22,5 +22,8 @@ var app = app || {};
         $('.output').show();
     };
 
+    weatherView.initLoginPage();
+    weatherView.initFormPage();
+    weatherView.initOutputPage();
     module.weatherView = weatherView;
 })(app);
