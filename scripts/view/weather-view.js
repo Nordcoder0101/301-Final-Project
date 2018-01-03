@@ -7,7 +7,7 @@ var app = app || {};
       $('.container').hide();
       $('.login').show();
      
-      $('.form').on('submit', callback);
+      // $('.form').on('submit', callback);
     };
 
     
@@ -32,11 +32,3 @@ var app = app || {};
   })(app);
 
         
-  function appendWeather(data) {
-        // console.log(data)
-        // console.log(data.currently)
-        // console.log(data.currently.temperature)
-        // console.log(data)
-        ponyExpress = new Weather(data)
-        $("#weather-display").append(ponyExpress.toHtml())
-        }
