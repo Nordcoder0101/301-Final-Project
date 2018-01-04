@@ -1,0 +1,38 @@
+.topnav {
+    overflow: hidden;
+    background: linear-gradient(to bottom right, black, rgb(80, 77, 77));
+    opacity: .7;
+    position: relative;
+    background-position: center;
+    top: 0%;
+    width: 100%;
+    right: .1%;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  
+  .topnav a {
+    display: inline;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(116, 34, 34);
+    opacity: .7;
+    color: white;
+  }
+
+  #user{
+      padding-left: 30vw;
+      color: white;
+      display: inline-block;
+      text-align: left;
+      font-size: 2vw;
+      font-family: 'Roboto', sans-serif;
+
+  }
