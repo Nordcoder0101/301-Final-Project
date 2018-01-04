@@ -3,6 +3,16 @@ var weatherView = {};
 var app = app || {};
 
 (function(module) {
+    weatherView.initHomePage = function () {
+      resetView();
+      $('.container').hide();
+      $('#home').show();
+
+      $('#login').click(function(){ 
+        weatherView.initLoginPage();
+      })
+    };
+    
     weatherView.initLoginPage = function () {
       $('.container').hide();
       $('.login').show();
@@ -13,7 +23,7 @@ var app = app || {};
       })
 
     };
-    
+
     weatherView.initFormPage = function() {
       $('.container').hide();
       $('.input').show();
