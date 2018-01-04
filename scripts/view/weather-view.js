@@ -27,6 +27,7 @@ var app = app || {};
     weatherView.initOutputPage = function () {
       $('.container').hide();
       $('.output').show();
+      $('.weather-view').show();
     };
     
     weatherView.initLoginPage();
