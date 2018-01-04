@@ -55,7 +55,7 @@ function verifyAccounts(name, password){
                 window.location = 'www.google.com'
             }else {alert('incorrect name or password try again')}
         }
-    })
+    })}
   
 function createNewAccount() {
   $.getJSON(`${__API_URL__}/api/v1/newaccount`)
@@ -73,4 +73,3 @@ function updateWeather(lat,long) {
     .then(data => appendWeather(data))
     .then(() => console.log('done'))
 };
-
