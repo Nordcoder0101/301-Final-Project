@@ -7,12 +7,18 @@ var app = app || {};
 (function(module) {
 
   var weatherView = {};
+
+  weatherView.initHomePage = function () {
+    $('.container').hide();
+    $('#register').hide();
+    $('#user').hide();
+    $('.form').hide();
+  };
   
   weatherView.initLoginPage = function () {
     $('.container').hide();
-    $('.login').show();
-    $('.form').on('submit');
-
+    $('#formview').show();
+    // $('.form').on('submit');
     $('#login-submit').click(function(){ 
       weatherView.initFormPage();
     });
@@ -20,6 +26,10 @@ var app = app || {};
   };
     
   weatherView.initFormPage = function() {
+    console.log($('#username').val(), $('#password').val());
+    verifyAccounts($('#username').val(), ($('#password')).val());
+    $('#login').hide();
+    $('#register').show();
     $('.container').hide();
     $('.input').show();
     $('#user-submit').click(function(){ 
@@ -37,14 +47,14 @@ var app = app || {};
 
   weatherView.initAboutPage = function () {
     $('.container').hide();
-    // $('.about').show();
     $('#about-us').show();
   };
     
-  // weatherView.initLoginPage();
+  weatherView.initLoginPage();
   // weatherView.initFormPage();
   // weatherView.initOutputPage();
   // weatherView.initAboutPage();
+  // weatherView.initHomePage();
     
   module.weatherView = weatherView;
 })(app);

@@ -19,7 +19,7 @@
     <nav class="topnav">
         <a class="active" href="/">Home</a>
         <a class="active" href="/about">About Us</a>
-        <a class="active" href="/user" id= "user-login">SignUp</a>
+        <a class="active" href="/register" id= "register">Register</a>
         <a class="active" href="/login" id= "login">Login</a>
         <div class="active" id="user">User</div> 
         <!-- <a class="active" href="/users/update" id= "users-update">Update</a>
@@ -35,13 +35,14 @@
  <h1>Login</h1>
   <label>
      <h2>Username</h2>
-     <input type="text" id="username" placeholder="username"></input>
+     <input type="text" id="username" placeholder="username" required></input>
   </label>
   <label>
      <h2>Password</h2>
-     <input type="password" id="password" placeholder="password"></input>
+     <input type="password" id="password" placeholder="password" required></input>
   </label>
-  <button type="submit" id="login-submit"><a href = "#formview-two">SUBMIT</a></button>
+  <input type="button" id="login-submit" value="SUBMIT"/>
+  <!-- <button type="submit" id="login-submit"><a href = "#formview-two">SUBMIT</a></button> -->
 </form>
 </section>
 
@@ -59,7 +60,7 @@
     <h2>Zipcode</h2>
       <input type="text" id="zipcode" placeholder="zipcode" required></input>
    </label>
-   <input type="button" id="user-submit" value="SUBMIT" />
+   <input type="button" id="user-submit" value="SUBMIT"/>
  </form>
 </section>
 
