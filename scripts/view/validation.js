@@ -1,4 +1,4 @@
-$('#form-logi').submit(function(e){
+$('#form-login').submit(function(e){
     e.prevent.Default();
     var username = $('input#username').val();
     var pword = $('input#password').val();
@@ -15,7 +15,7 @@ $('#form-logi').submit(function(e){
         return false;
     }
 
-    if(username != 'name' && pword != 'password'){
+    if(username != '' && pword != ''){
         $.ajax({
             url:
             type:

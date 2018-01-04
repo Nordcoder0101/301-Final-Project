@@ -1,7 +1,6 @@
 'use strict'
 
 var app = app || {};
-var _API_URL_ = 'http://localhost:3000';
 
 let weather = [];
 let __API_URL__ = 'https://accounts-weather-app.herokuapp.com'
@@ -35,6 +34,36 @@ function findLocation(zip) {
     // .then(results => JSON.parse(results.responseText))
     .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng))
     
+}
+
+// function verifyAccounts(n){
+//     console.log(n)
+//     return $.getJSON(`${__API_URL__}/api/v1/verify`,{
+//         name: n,
+//     })
+//     .then(x => console.log(x))
+// }
+
+function verifyAccounts(name, password){
+    console.log(name,password)
+    $.ajax({
+        url: `${__API_URL__}/api/v1/verify`,
+        type: 'GET',
+        data: {
+            name: name,
+            password: password
+        },
+        success: function(data) {
+            console.log ('name:',data[0].name.toString(), 'password: ', data[0].password.toString());
+            let resultName = data[0].name
+            let resultPassword = data[0].password
+
+            if(resultName===name && resultPassword===password){
+                alert("login succeeded");
+                window.location = 'www.google.com'
+            }else {alert('incorrect name or password try again')}
+        }
+    })
 }
 
 function updateWeather(lat,long) {
