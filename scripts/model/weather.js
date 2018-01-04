@@ -51,7 +51,8 @@ function verifyAccounts(name, password){
                 return;
             }
 
-            console.log ('name:',data[0].name.toString(), 'password: ', data[0].password.toString());
+            let userInfo = data[0];
+            localStorage.setItem('user_info', JSON.stringify(userInfo))
             console.log(data)
             let resultName = data[0].name
             let resultPassword = data[0].password
