@@ -1,40 +1,52 @@
-var weatherView = {};
+'use strict';
+
+
 
 var app = app || {};
 
 (function(module) {
-    weatherView.initLoginPage = function () {
-      $('.container').hide();
-      $('.login').show();
-      $('.form').on('submit');
 
-      $('#login-submit').click(function(){ 
-        weatherView.initFormPage();
-      })
+  var weatherView = {};
+  
+  weatherView.initLoginPage = function () {
+    $('.container').hide();
+    $('.login').show();
+    $('.form').on('submit');
 
-    };
-    
-    weatherView.initFormPage = function() {
-      $('.container').hide();
-      $('.input').show();
-      $('#form-two').on('submit');
+    $('#login-submit').click(function(){ 
+      weatherView.initFormPage();
+    });
 
-      $('#user-submit').click(function(){ 
-        weatherView.initOutputPage();
-      })      
-    };
+  };
     
-    weatherView.initOutputPage = function () {
-      $('.container').hide();
-      $('.output').show();
-      $('.weather-view').show();
-    };
+  weatherView.initFormPage = function() {
+    $('.container').hide();
+    $('.input').show();
+    $('#user-submit').click(function(){ 
+      weatherView.initOutputPage();
+    });      
+  };
     
-    weatherView.initLoginPage();
-    // weatherView.initFormPage();
-    // weatherView.initOutputPage();
+  weatherView.initOutputPage = function () {
+    findLocation($('#zipcode').val());
+    $('.container').hide();
+    $('.output').show();
+    $('.weather-view').show();
+
+  };
+
+  weatherView.initAboutPage = function () {
+    $('.container').hide();
+    // $('.about').show();
+    $('#about-us').show();
+  };
     
-    module.weatherView = weatherView;
-  })(app);
+  // weatherView.initLoginPage();
+  // weatherView.initFormPage();
+  // weatherView.initOutputPage();
+  // weatherView.initAboutPage();
+    
+  module.weatherView = weatherView;
+})(app);
 
         
