@@ -12,12 +12,14 @@ var app = app || {};
     $('.container').hide();
     $('#register').hide();
     $('#user').hide();
-    $('.form').hide();
+    // $('.form').hide();
   };
   
   weatherView.initLoginPage = function () {
+    console.log('ran the thing');
     $('.container').hide();
-    $('#formview').show();
+    // $('#formview').show();
+    $('.login').show();
     // $('.form').on('submit');
     $('#login-submit').click(function(){ 
       weatherView.initFormPage();
@@ -50,7 +52,7 @@ var app = app || {};
     $('#about-us').show();
   };
     
-  weatherView.initLoginPage();
+  // weatherView.initLoginPage();
   // weatherView.initFormPage();
   // weatherView.initOutputPage();
   // weatherView.initAboutPage();

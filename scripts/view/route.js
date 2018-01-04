@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // page('/', () => app.Book.fetchAll(app.bookView.initIndexPage))
 // page('/weather/input', ctx => app.Weather.fetchWeather(ctx.params.id, app.weatherView.initOutputPage))
