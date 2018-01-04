@@ -1,40 +1,40 @@
-'use strict';
+// 'use strict';
 
-$('#form-login').submit(function(e){
-  e.prevent.Default();
-  var username = $('input#username').val();
-  var pword = $('input#password').val();
+// $('#form-login').submit(function(e){
+//   e.prevent.Default();
+//   var username = $('input#username').val();
+//   var pword = $('input#password').val();
 
-  if (pword == ""){
-    alert ("Please enter Password");
-    $('#password').focus();
-    return false;
-  }
+//   if (pword == ""){
+//     alert ("Please enter Password");
+//     $('#password').focus();
+//     return false;
+//   }
 
-  if (username == ""){
-    alert ("Please enter username");
-    $('#username').focus();
-    return false;
-  }
+//   if (username == ""){
+//     alert ("Please enter username");
+//     $('#username').focus();
+//     return false;
+//   }
 
-  if(username != '' && pword != ''){
-    $.ajax({
-      url: {},
-      type: {},
-      data: {
-        username: name,
-        pword: password
-      },
-      success: function(data) {
-        console.log (data);
+//   if(username != '' && pword != ''){
+//     $.ajax({
+//       url: {},
+//       type: {},
+//       data: {
+//         username: name,
+//         pword: password
+//       },
+//       success: function(data) {
+//         console.log (data);
 
-        var obj = JSON.parse(data);
+//         var obj = JSON.parse(data);
 
-        if(obj.result != 'invalid'){
-          alert("login succeeded");
-          window.location = 'www.batheinmymilk.com';
-        }
-      }
-    });
-  }
-});
+//         if(obj.result != 'invalid'){
+//           alert("login succeeded");
+//           window.location = 'www.batheinmymilk.com';
+//         }
+//       }
+//     });
+//   }
+// });

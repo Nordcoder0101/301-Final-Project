@@ -38,7 +38,6 @@ function findLocation(zip) {
 }
 
 function verifyAccounts(name, password){
-
     console.log(name,password)
     $.ajax({
         url: `${__API_URL__}/api/v1/verify`,
@@ -65,6 +64,7 @@ function verifyAccounts(name, password){
             }else {alert('incorrect password')}
     } 
     })}
+
   
     function createAccount(name, zip, email, password){
 
