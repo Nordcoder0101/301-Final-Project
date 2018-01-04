@@ -38,25 +38,33 @@ function findLocation(zip) {
 }
 
 function verifyAccounts(name, password){
-  console.log(name,password);
-  $.ajax({
-    url: `${__API_URL__}/api/v1/verify`,
-    type: 'GET',
-    data: {
-      name: name,
-      password: password
-    },
-    success: function(data) {
-      console.log ('name:',data[0].name.toString(), 'password: ', data[0].password.toString());
-      let resultName = data[0].name;
-      let resultPassword = data[0].password;
 
-      if(resultName===name && resultPassword===password){
-        alert("login succeeded");
-        window.location = 'www.google.com';
-      }else {alert('incorrect name or password try again');}
-    }
-  });}
+    console.log(name,password)
+    $.ajax({
+        url: `${__API_URL__}/api/v1/verify`,
+        type: 'GET',
+        data: {
+            name: name,
+            password: password
+        },
+        success: function(data) {
+            if(data.length === 0){
+                alert('incorrect name');
+                return;
+            }
+
+            let userInfo = data[0];
+            localStorage.setItem('user_info', JSON.stringify(userInfo))
+            console.log(data)
+            let resultName = data[0].name
+            let resultPassword = data[0].password
+
+            if(resultName===name && resultPassword===password){
+                alert("login succeeded");
+                window.location = '/weather/form'
+            }else {alert('incorrect password')}
+    } 
+    })}
   
 function createNewAccount() {
   $.getJSON(`${__API_URL__}/api/v1/newaccount`)
