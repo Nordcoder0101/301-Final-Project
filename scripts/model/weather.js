@@ -46,15 +46,22 @@ function verifyAccounts(name, password){
             password: password
         },
         success: function(data) {
-            console.log ('name:',data[0].name.toString(), 'password: ', data[0].password.toString());
+            if(data.length === 0){
+                alert('incorrect name');
+                return;
+            }
+
+            let userInfo = data[0];
+            localStorage.setItem('user_info', JSON.stringify(userInfo))
+            console.log(data)
             let resultName = data[0].name
             let resultPassword = data[0].password
 
             if(resultName===name && resultPassword===password){
                 alert("login succeeded");
-                window.location = 'www.google.com'
-            }else {alert('incorrect name or password try again')}
-        }
+                window.location = '/weather/form'
+            }else {alert('incorrect password')}
+    } 
     })}
   
 function createNewAccount() {
