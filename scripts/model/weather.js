@@ -61,16 +61,33 @@ function verifyAccounts(name, password){
 
             if(resultName===name && resultPassword===password){
                 alert("login succeeded");
-                window.location = '/weather/form'
+                app.weatherView.initFormPage()
             }else {alert('incorrect password')}
     } 
     })}
   
-function createNewAccount() {
-  $.getJSON(`${__API_URL__}/api/v1/newaccount`)
-    .then(() => console.log('Success!'));
+    function createAccount(name, zip, email, password){
 
-}
+        console.log(name, zip, email, password)
+        $.ajax({
+            url: `${__API_URL__}/api/v1/newaccount`,
+            type: 'GET',
+            data: {
+                name: name,
+                zip: zip,
+                email: email,
+                password: password
+            },
+            success: function(data) {
+                console.log(data)
+                if(data.rowCount !== 1){
+                    alert('creation failed');
+                    return;
+                }
+                console.log('account created, initialize login')
+                verifyAccounts(name,password)
+        } 
+        })}
 
 function updateWeather(lat,long) {
   console.log('lat: ',lat,'long: ',long);
