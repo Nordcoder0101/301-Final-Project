@@ -19,7 +19,8 @@ var app = app || {};
     // $('#formview').show();
     $('.login').show();
     // $('.form').on('submit');
-    $('#login-submit').click(function(){ 
+    $('#login-submit').click(function(e){ 
+      e.preventDefault();
       verifyAccounts($('#username').val(), $('#password').val());
     });
 
@@ -27,11 +28,11 @@ var app = app || {};
     
   weatherView.initRegistration = function () {
     console.log('did the thing');
-    $('.container').hide();
+    // $('.container').hide();
     $('#registerview').show();
-    $('#register-submit').click(function(){ 
-      console.log('did the thing');
-    });
+    // $('#register-submit').click(function(){ 
+    //   console.log('did the other thing');
+    // });
   };
 
   weatherView.initFormPage = function() {

@@ -58,10 +58,18 @@ function verifyAccounts(name, password){
             let resultName = data[0].name
             let resultPassword = data[0].password
 
-            if(resultName===name && resultPassword===password){
-                alert("login succeeded");
-                app.weatherView.initFormPage()
-            }else {alert('incorrect password')}
+
+      let userInfo = data[0];
+      localStorage.setItem('user_info', JSON.stringify(userInfo))
+      console.log(data)
+      let resultName = data[0].name
+      let resultPassword = data[0].password
+
+      if(resultName===name && resultPassword===password){
+        alert("login succeeded");
+        page('/output');
+      }else {alert('incorrect password')}
+
     } 
     })}
 
