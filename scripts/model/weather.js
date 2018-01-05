@@ -61,7 +61,7 @@ function verifyAccounts(name, password){
 
       if(resultName===name && resultPassword===password){
         alert("login succeeded");
-        window.location = '/weather/form'
+        page('/output');
       }else {alert('incorrect password')}
     } 
   })}
