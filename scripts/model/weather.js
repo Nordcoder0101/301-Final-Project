@@ -8,8 +8,12 @@ let __API_URL__ = 'https://accounts-weather-app.herokuapp.com';
 
 function Weather(data) {
   this.temperature = data.currently.temperature;
-  this.wind = data.currently.windSpeed;
   this.precipitation = data.currently.precipProbability;
+  this.windspeed = data.currently.windSpeed;
+  this.windgust = data.currently.windGust;
+  this.cloudcover = data.currently.cloudCover;
+  this.summary = data.minutely.summary;
+  
 };
 
 Weather.prototype.toHtml = function(){
@@ -27,7 +31,7 @@ function appendWeather(data) {
     console.log(data)
   let ponyExpress = new Weather(data);
   console.log(ponyExpress);
-  $('.delete-forecast').empty()
+  $('#weather-display').empty()
   $("#weather-display").append(ponyExpress.toHtml());
 }
 
