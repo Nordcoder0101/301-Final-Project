@@ -22,20 +22,25 @@ var app = app || {};
     $('.login').show();
     // $('.form').on('submit');
     $('#login-submit').click(function(){ 
-      weatherView.initFormPage();
+      verifyAccounts($('#username').val(), $('#password').val());
     });
 
   };
     
+  // weatherView.initRegistration = function () {
+    
+  // };
+
   weatherView.initFormPage = function() {
     console.log($('#username').val(), $('#password').val());
     verifyAccounts($('#username').val(), ($('#password')).val());
-    $('#login').hide();
+    $('.login').hide();
     $('#register').show();
     $('.container').hide();
     $('.input').show();
     $('#user-submit').click(function(){ 
-      weatherView.initOutputPage();
+      // weatherView.initOutputPage();
+      verifyAccounts($('#username').val(), $('#password').val());
     });      
   };
     
