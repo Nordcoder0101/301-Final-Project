@@ -49,7 +49,13 @@ var app = app || {};
   };
     
   weatherView.initOutputPage = function () {
-    findLocation($('#zipcode').val());
+    let zip = JSON.parse(localStorage.getItem('user_info')).zip
+    console.log(zip)
+    if(!$('#zipcode').val()) {
+      findLocation(zip)
+    }else{
+      findLocation($('#zipcode').val())
+    }
     $('.container').hide();
     $('.output').show();
     $('.weather-view').show();

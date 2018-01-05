@@ -52,12 +52,6 @@ function verifyAccounts(name, password){
                 return;
             }
 
-            let userInfo = data[0];
-            localStorage.setItem('user_info', JSON.stringify(userInfo))
-            console.log(data)
-            let resultName = data[0].name
-            let resultPassword = data[0].password
-
 
       let userInfo = data[0];
       localStorage.setItem('user_info', JSON.stringify(userInfo))
@@ -65,7 +59,7 @@ function verifyAccounts(name, password){
       let resultName = data[0].name
       let resultPassword = data[0].password
 
-      if(resultName===name && resultPassword===password){form
+      if(resultName===name && resultPassword===password){
         alert("login succeeded");
         page('/output');
       }else {alert('incorrect password')}
