@@ -10,9 +10,14 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Bad+Script|Fascinate|Indie+Flower|Monoton|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
     <script type="text/x-handlebars-template" id="weather-template">
-      <p>{{wind}}</p>
-      <p>{{precipitation}}</p>
-      <p>{{temperature}}</p>
+      <div class="delete-forecast">
+          <p>{{summary}}</p>
+          <p>{{temperature}}</p>
+          <p>{{precipprob}}</p>
+          <p>{{windspeed}}</p>
+          <p>{{windgust}}</p>
+          <p>{{cloudcover}}</p>
+      </div>
     </script>
 </head>
   <body>
@@ -63,15 +68,10 @@
             </label>
             <br>
             <label>
-              <input type="text" id="reg-city" placeholder="city" required></input>
+              <input type="text" id="reg-email" placeholder="email" required></input>
             </label>
             <br>
             <label>
-              <input type="text" id="reg-state" placeholder="state" required></input>
-            </label>
-            <br>
-            <label>
-              <h2>Zipcode</h2>
               <input type="text" id="reg-zipcode" placeholder="zipcode" required></input>
             </label>
             <br>

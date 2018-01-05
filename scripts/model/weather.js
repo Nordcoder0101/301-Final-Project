@@ -24,8 +24,10 @@ function findAccounts(){
 }
 
 function appendWeather(data) {
+    console.log(data)
   let ponyExpress = new Weather(data);
   console.log(ponyExpress);
+  $('.delete-forecast').empty()
   $("#weather-display").append(ponyExpress.toHtml());
 }
 
