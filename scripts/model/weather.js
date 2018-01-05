@@ -8,8 +8,12 @@ let __API_URL__ = 'https://accounts-weather-app.herokuapp.com';
 
 function Weather(data) {
   this.temperature = data.currently.temperature;
-  this.wind = data.currently.windSpeed;
   this.precipitation = data.currently.precipProbability;
+  this.windspeed = data.currently.windSpeed;
+  this.windgust = data.currently.windGust;
+  this.cloudcover = data.currently.cloudCover;
+  this.summary = data.minutely.summary;
+  
 };
 
 Weather.prototype.toHtml = function(){
@@ -24,8 +28,10 @@ function findAccounts(){
 }
 
 function appendWeather(data) {
+    console.log(data)
   let ponyExpress = new Weather(data);
   console.log(ponyExpress);
+  $('#weather-display').empty()
   $("#weather-display").append(ponyExpress.toHtml());
 }
 
@@ -52,12 +58,6 @@ function verifyAccounts(name, password){
                 return;
             }
 
-            let userInfo = data[0];
-            localStorage.setItem('user_info', JSON.stringify(userInfo))
-            console.log(data)
-            let resultName = data[0].name
-            let resultPassword = data[0].password
-
 
       let userInfo = data[0];
       localStorage.setItem('user_info', JSON.stringify(userInfo))
@@ -74,28 +74,31 @@ function verifyAccounts(name, password){
     })}
 
   
-    function createAccount(name, zip, email, password){
 
-        console.log(name, zip, email, password)
-        $.ajax({
-            url: `${__API_URL__}/api/v1/newaccount`,
-            type: 'GET',
-            data: {
-                name: name,
-                zip: zip,
-                email: email,
-                password: password
-            },
-            success: function(data) {
-                console.log(data)
-                if(data.rowCount !== 1){
-                    alert('creation failed');
-                    return;
-                }
-                console.log('account created, initialize login')
-                verifyAccounts(name,password)
-        } 
-        })}
+  
+function createAccount(name, zip, email, password){
+
+  console.log(name, zip, email, password)
+  $.ajax({
+    url: `${__API_URL__}/api/v1/newaccount`,
+    type: 'GET',
+    data: {
+      name: name,
+      zip: zip,
+      email: email,
+      password: password
+    },
+    success: function(data) {
+      console.log(data)
+      if(data.rowCount !== 1){
+        alert('creation failed');
+        return;
+      }
+      console.log('account created, initialize login')
+      verifyAccounts(name,password);
+    }
+  });}
+
 
 function updateWeather(lat,long) {
   console.log('lat: ',lat,'long: ',long);

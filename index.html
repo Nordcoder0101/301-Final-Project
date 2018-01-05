@@ -10,19 +10,47 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Bad+Script|Fascinate|Indie+Flower|Monoton|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
     <script type="text/x-handlebars-template" id="weather-template">
-      <p>{{wind}}</p>
-      <p>{{precipitation}}</p>
-      <p>{{temperature}}</p>
+      <div class="delete-forecast">
+          <div class="divTable">
+              <div class="divTableBody">
+              <div class="divTableRow">
+              <div class="divTableCell">Summary: {{summary}} </div>
+              <div class="divTableCell"></div>
+              </div>
+              <div class="divTableRow">
+              <div class="divTableCell">Temperature : </div>
+              <div class="divTableCell">{{temperature}} F</div>
+              </div>
+              <div class="divTableRow">
+              <div class="divTableCell">Chance of Precipitation:</div>
+              <div class="divTableCell">{{precipitation}} %</div>
+              </div>
+              <div class="divTableRow">
+              <div class="divTableCell">Wind Speed: </div>
+              <div class="divTableCell">{{windspeed}} MPH</div>
+              </div>
+              <div class="divTableRow">
+              <div class="divTableCell">Wind Gusts: </div>
+              <div class="divTableCell">{{windgust}} MPH</div>
+              </div>
+              <div class="divTableRow">
+              <div class="divTableCell">Cloud Cover: </div>
+              <div class="divTableCell">{{cloudcover}} %</div>
+              </div>
+              </div>
+              </div>
+      </div>
     </script>
 </head>
   <body>
     <header>
       <nav class="topnav">
-        <a class="active" href="/" id="home">Home</a>
-        <a class="active" href="/output" id="myweather">My Weather</a>
-        <a class="active" href="/about" id="about">About Us</a>
-        <a class="active" href="/register" id="register">Register</a>
+        <a class="active" href="/">Home</a>
+        <a class="active" href="/output">My Weather</a>
+        <a class="active" href="/about">About Us</a>
+        <a class="active" href="/register" id= "register">Register</a>
         <a class="active" href="/login" id="login">Login</a>
+        <div class="active" id="user">User</div> 
         <!-- <a class="active" href="/users/update" id= "users-update">Update</a>
         <a class="active" href="/users/delete" id="users-delete">Delete</a>
         <a class="active" href="/users/favorite" id="users-favorite">Favorites</a> -->
@@ -30,12 +58,8 @@
       </nav>
     </header>
     <main>
-    <section class="weatherhome container">
-      <h1>Welcome to Weather App!</h1>
-      <h2>CONTAINS WEATHER</h2>
-    </section>
-      <section id="formview" class="login container">
-        <form class="form" id="form-login">
+       <section id="formview" class="login container">
+         <form class="form" id="form-login">
           <h1>Login</h1>
           <br>
           <label>
@@ -52,9 +76,9 @@
       <!-- <button type="submit" id="login-submit"><a href = "#formview-two">SUBMIT</a></button> -->
         </form>
       </section>
-
       <section id="registerview" class="register container">
           <form class="registerform" id="form-register">
+
             <h1>Register</h1>
             <label>
              <br>
@@ -68,12 +92,7 @@
             <br>
             <br>
             <label>
-              <input type="text" id="reg-city" placeholder="city" required></input>
-            </label>
-            <br>
-            <br>
-            <label>
-              <input type="text" id="reg-state" placeholder="state" required></input>
+              <input type="text" id="reg-email" placeholder="email" required></input>
             </label>
             <br>
             <br>
@@ -105,8 +124,8 @@
       </section>
 
       <section id="formview-three" class="container output">
-        <h1>Output for forecast?</h1>
-        <p>what we want to show!</p>
+        <h1>Contains Weather</h1>
+        <p>and more...</p>
       </section>
 
 
@@ -126,6 +145,7 @@
         <h3 id="names">Jordan</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
        <section class= "aboutus-border"></section>
+
       </section>
     </main>
     <footer>
@@ -135,8 +155,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
       <script src="scripts/view/weather-view.js"></script>
+      <!-- <script src="scripts/view/storm.js"></script> -->
       <script src="scripts/model/weather.js"></script>
       <script src="scripts/view/route.js"></script>
-      <script src="scripts/view/storm.js"></script>
+      <script src="scripts/view/validation.js"></script>
     </body>
 </html>
