@@ -28,11 +28,12 @@ var app = app || {};
     
   weatherView.initRegistration = function () {
     console.log('did the thing');
-    // $('.container').hide();
+    $('#formview').hide();
+    $('.container').hide();
     $('#registerview').show();
-    // $('#register-submit').click(function(){ 
-    //   console.log('did the other thing');
-    // });
+    $('#register-submit').click(function(){ 
+      console.log('did the other thing');
+    });
   };
 
   weatherView.initFormPage = function() {

@@ -66,7 +66,7 @@ function verifyAccounts(name, password){
     } 
   })}
   
-  
+
 function createAccount(name, zip, email, password){
 
   console.log(name, zip, email, password)
@@ -80,7 +80,7 @@ function createAccount(name, zip, email, password){
       password: password
     },
     success: function(data) {
-      console.log(data)
+      console.log(data);
       if(data.rowCount !== 1){
         alert('creation failed');
         return;
