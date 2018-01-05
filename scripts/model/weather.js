@@ -66,7 +66,8 @@ function verifyAccounts(name, password){
       let resultPassword = data[0].password
 
       if(resultName===name && resultPassword===password){
-        alert("login succeeded");
+        $("#login").hide()
+        $("#register").hide()
         page('/output');
       }else {alert('incorrect password')}
 
@@ -91,7 +92,7 @@ function createAccount(name, zip, email, password){
     success: function(data) {
       console.log(data)
       if(data.rowCount !== 1){
-        alert('creation failed');
+        alert('User Already exists');
         return;
       }
       console.log('account created, initialize login')
