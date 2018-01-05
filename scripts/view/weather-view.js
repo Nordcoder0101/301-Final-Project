@@ -10,13 +10,11 @@ var app = app || {};
 
   weatherView.initHomePage = function () {
     $('.container').hide();
-    $('#register').hide();
+    // $('#register').hide();
     $('#user').hide();
-    // $('.form').hide();
   };
   
   weatherView.initLoginPage = function () {
-    console.log('ran the thing');
     $('.container').hide();
     // $('#formview').show();
     $('.login').show();
@@ -27,9 +25,14 @@ var app = app || {};
 
   };
     
-  // weatherView.initRegistration = function () {
-    
-  // };
+  weatherView.initRegistration = function () {
+    console.log('did the thing');
+    $('.container').hide();
+    $('#registerview').show();
+    $('#register-submit').click(function(){ 
+      console.log('did the thing');
+    });
+  };
 
   weatherView.initFormPage = function() {
     console.log($('#username').val(), $('#password').val());
@@ -57,6 +60,7 @@ var app = app || {};
     $('#about-us').show();
   };
     
+  // weatherView.initRegistration();
   // weatherView.initLoginPage();
   // weatherView.initFormPage();
   // weatherView.initOutputPage();
