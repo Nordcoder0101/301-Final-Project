@@ -1,0 +1,21 @@
+body {
+    background: #111;
+  }
+
+#home, #myweather, #about, #register, #login {
+    font-family: 'Monoton', cursive;
+    text-shadow: 2px 2px #0a0a0a;
+}
+
+.weatherhome {
+    text-align: center;
+    color: white;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 50px;
+    margin-top: 300px;
+
+}
+
+body {
+    background: #111;
+  }
