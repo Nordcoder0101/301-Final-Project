@@ -12,6 +12,7 @@ var app = app || {};
     $('.container').hide();
     // $('#register').hide();
     $('#user').hide();
+    $('.weatherhome').show();
   };
   
   weatherView.initLoginPage = function () {
