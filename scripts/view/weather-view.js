@@ -31,9 +31,11 @@ var app = app || {};
     console.log('did the thing');
     $('.container').hide();
     $('#registerview').show();
-    // $('#register-submit').click(function(){ 
-    //   console.log('did the other thing');
-    // });
+    $('#reg-user-submit').click(function(){ 
+       
+      createAccount($('#reg-username').val(), $('#reg-zipcode').val(), $('#reg-email').val(), $('#reg-password').val())
+      console.log('submited user for validation');
+    });
   };
 
   weatherView.initFormPage = function() {
