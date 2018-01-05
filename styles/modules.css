@@ -22,17 +22,7 @@
   }
   
   .topnav a:hover {
-    background-color: rgb(116, 34, 34);
+    background-color: rgb(6, 84, 100);
     opacity: .7;
     color: white;
-  }
-
-  #user{
-      padding-left: 30vw;
-      color: white;
-      display: inline-block;
-      text-align: left;
-      font-size: 2vw;
-      font-family: 'Roboto', sans-serif;
-
   }

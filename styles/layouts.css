@@ -4,7 +4,7 @@ body {
 
 #home, #myweather, #about, #register, #login {
     font-family: 'Monoton', cursive;
-    text-shadow: 2px 2px #0a0a0a;
+    text-shadow: 2px 2px #5e5c5c;
 }
 
 .weatherhome {
@@ -12,10 +12,14 @@ body {
     color: white;
     font-family: 'Sedgwick Ave Display', cursive;
     font-size: 50px;
-    margin-top: 300px;
-
+    margin-top: 190px;
+    text-shadow: 3px 3px #363535;
 }
 
-body {
-    background: #111;
+#about-us {
+    color: white;
+}
+
+.aboutus-border {
+    border-top: 2px solid rgba(95, 93, 93, 0.2);
   }
