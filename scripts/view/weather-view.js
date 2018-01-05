@@ -29,7 +29,7 @@ var app = app || {};
     
   weatherView.initRegistration = function () {
     console.log('did the thing');
-    // $('.container').hide();
+    $('.container').hide();
     $('#registerview').show();
     // $('#register-submit').click(function(){ 
     //   console.log('did the other thing');
