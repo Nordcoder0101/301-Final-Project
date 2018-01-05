@@ -38,20 +38,26 @@ function findLocation(zip) {
 }
 
 function verifyAccounts(name, password){
+    console.log(name,password)
+    $.ajax({
+        url: `${__API_URL__}/api/v1/verify`,
+        type: 'GET',
+        data: {
+            name: name,
+            password: password
+        },
+        success: function(data) {
+            if(data.length === 0){
+                alert('incorrect name');
+                return;
+            }
 
-  console.log(name,password)
-  $.ajax({
-    url: `${__API_URL__}/api/v1/verify`,
-    type: 'GET',
-    data: {
-      name: name,
-      password: password
-    },
-    success: function(data) {
-      if(data.length === 0){
-        alert('incorrect name');
-        return;
-      }
+            let userInfo = data[0];
+            localStorage.setItem('user_info', JSON.stringify(userInfo))
+            console.log(data)
+            let resultName = data[0].name
+            let resultPassword = data[0].password
+
 
       let userInfo = data[0];
       localStorage.setItem('user_info', JSON.stringify(userInfo))
@@ -63,14 +69,33 @@ function verifyAccounts(name, password){
         alert("login succeeded");
         page('/output');
       }else {alert('incorrect password')}
-    } 
-  })}
-  
-function createNewAccount() {
-  $.getJSON(`${__API_URL__}/api/v1/newaccount`)
-    .then(() => console.log('Success!'));
 
-}
+    } 
+    })}
+
+  
+    function createAccount(name, zip, email, password){
+
+        console.log(name, zip, email, password)
+        $.ajax({
+            url: `${__API_URL__}/api/v1/newaccount`,
+            type: 'GET',
+            data: {
+                name: name,
+                zip: zip,
+                email: email,
+                password: password
+            },
+            success: function(data) {
+                console.log(data)
+                if(data.rowCount !== 1){
+                    alert('creation failed');
+                    return;
+                }
+                console.log('account created, initialize login')
+                verifyAccounts(name,password)
+        } 
+        })}
 
 function updateWeather(lat,long) {
   console.log('lat: ',lat,'long: ',long);
