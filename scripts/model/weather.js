@@ -36,7 +36,6 @@ function appendWeather(data) {
 }
 
 function findLocation(zip) {
-  // return $.get('http://localhost:3000/api/v1/location')
   return $.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
     // .then(results => JSON.parse(results.responseText))
     .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng));
