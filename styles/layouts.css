@@ -1,21 +1,9 @@
-body {
-    background: #111;
-    background-image: url('../assets/darkmoon.jpg');
-  }
 
 #home, #myweather, #about, #register, #login {
     font-family: 'Monoton', cursive;
     text-shadow: 2px 2px #5e5c5c;
 }
 
-.weatherhome {
-    text-align: center;
-    color: white;
-    font-family: 'Sedgwick Ave Display', cursive;
-    font-size: 50px;
-    margin-top: 190px;
-    text-shadow: 4px 4px #363535;   
-}
 
 #about-us {
     color: white;
@@ -24,27 +12,7 @@ body {
     text-shadow: 2px 2px #1a1818; 
 }
 
-#names {
-    text-align: center;
-    font-family: 'Sedgwick Ave Display', cursive;
-    font-size: 40px;
-    background: linear-gradient(to bottom right, black, rgb(80, 77, 77));
-    text-shadow: 2px 2px #615959;
-}
 
 .aboutus-border {
     border-top: 2px solid rgba(95, 93, 93, 0.2);
   }
-
-.form {
-    text-align: center;
-    font-family: 'Monoton', cursive;
-    color: white;
-    border: medium solid rgb(68, 65, 65);
-    position: absolute; 
-    padding: 7%;
-    margin-left: 500px;
-    margin-top: 40px;
-    text-shadow: 3px 3px #363535; 
-    background: linear-gradient(to bottom right, black, rgb(80, 77, 77));
-}

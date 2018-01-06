@@ -28,7 +28,8 @@
 
   .delete-forecast {
     display: block;
-    color: white;
+    color: black;
+    font-family: 'Monoton', cursive;
     text-align: center;
     /* padding: 14px 16px; */
     text-decoration: none;
@@ -69,4 +70,70 @@
 }
 .divTableBody {
 	display: table-row-group;
+}
+
+body {
+    background: #111;
+    background-image: url('../assets/darkmoon.jpg');
+  }
+
+  .registerform {
+    padding-top: 5vw;
+    padding-bottom: 5vw;  
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    color: white;
+    font-size: 20px;
+    border: medium solid rgb(20, 101, 126);
+    position: absolute; 
+    padding: 7%;
+    margin-left: 585px;
+    margin-top: 40px;
+    text-shadow: 3px 3px #363535; 
+    background: linear-gradient(to bottom right, rgb(52, 77, 100), rgb(20, 101, 126));
+    margin-bottom: 50px;
+}
+
+#username, #password, #reg-username, #reg-password, #reg-email, #reg-zipcode {
+    font-family: 'Sedgwick Ave Display', cursive;
+    text-align: center;
+}
+
+#names {
+    text-align: center;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 40px;
+    background: linear-gradient(to bottom right, black, rgb(80, 77, 77));
+    text-shadow: 3px 3px #54b6d3;
+}
+
+.weatherhome {
+    text-align: center;
+    color: white;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 50px;
+    margin-top: 190px;
+    text-shadow: 5px 5px rgb(20, 101, 126);   
+}
+
+.form {
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    color: white;
+    font-size: 20px;
+    border: medium solid rgb(20, 101, 126);
+    position: absolute; 
+    padding: 7%;
+    margin-left: 575px;
+    margin-top: 50px;
+    text-shadow: 3px 3px #363535;
+    background: linear-gradient(to bottom right, rgb(52, 77, 100), rgb(20, 101, 126));
+}
+
+#formview-three {
+    text-align: center;
+    font-family: 'Sedgwick Ave Display', cursive;
+    color: white;
+    font-size: 20px;
+    text-shadow: 5px 5px rgb(20, 101, 126); 
 }

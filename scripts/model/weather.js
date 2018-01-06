@@ -11,7 +11,7 @@ function Weather(data) {
   this.precipitation = data.currently.precipProbability;
   this.windspeed = data.currently.windSpeed;
   this.windgust = data.currently.windGust;
-  this.cloudcover = data.currently.cloudCover;
+  this.cloudcover = data.currently.cloudCover * 100;
   this.summary = data.minutely.summary;
   
 };
@@ -36,7 +36,6 @@ function appendWeather(data) {
 }
 
 function findLocation(zip) {
-  // return $.get('http://localhost:3000/api/v1/location')
   return $.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
     // .then(results => JSON.parse(results.responseText))
     .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng));
@@ -66,7 +65,8 @@ function verifyAccounts(name, password){
       let resultPassword = data[0].password
 
       if(resultName===name && resultPassword===password){
-        alert("login succeeded");
+        $("#login").hide()
+        $("#register").hide()
         page('/output');
       }else {alert('incorrect password')}
 
@@ -91,7 +91,7 @@ function createAccount(name, zip, email, password){
     success: function(data) {
       console.log(data)
       if(data.rowCount !== 1){
-        alert('creation failed');
+        alert('User Already exists');
         return;
       }
       console.log('account created, initialize login')
