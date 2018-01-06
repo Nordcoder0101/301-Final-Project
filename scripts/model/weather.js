@@ -11,7 +11,7 @@ function Weather(data) {
   this.precipitation = data.currently.precipProbability;
   this.windspeed = data.currently.windSpeed;
   this.windgust = data.currently.windGust;
-  this.cloudcover = data.currently.cloudCover;
+  this.cloudcover = data.currently.cloudCover * 100;
   this.summary = data.minutely.summary;
   
 };
