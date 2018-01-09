@@ -12,7 +12,7 @@ function Weather(data) {
   this.windspeed = data.currently.windSpeed;
   this.windgust = data.currently.windGust;
   this.cloudcover = data.currently.cloudCover * 100;
-  this.summary = data.minutely.summary;
+  this.summary = data.daily.summary;
   
 };
 
@@ -35,12 +35,35 @@ function appendWeather(data) {
   $("#weather-display").append(ponyExpress.toHtml());
 }
 
-function findLocation(zip) {
-  return $.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
-    // .then(results => JSON.parse(results.responseText))
-    .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng));
+//working code
+// function findLocation(zip) {
+//   return $.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
+//     // .then(results => JSON.parse(results.responseText))
+//     .then(results => console.log(results))
+//     .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng));
     
-}
+// }
+
+
+
+
+function findLocation(zip){
+
+  console.log(zip)
+  $.ajax({
+    url: `${__API_URL__}/api/v1/location`,
+    type: 'GET',
+    data: {
+      zip: zip,
+    },
+    success: function(results) {
+      let lat = JSON.parse(results.text).results[0].geometry.location.lat
+      let long = JSON.parse(results.text).results[0].geometry.location.lng
+
+      updateWeather(lat,long)
+    }
+  });}
+
 
 function verifyAccounts(name, password){
     console.log(name,password)
