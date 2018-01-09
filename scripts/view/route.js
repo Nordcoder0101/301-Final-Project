@@ -1,8 +1,10 @@
 'use strict';
 
-if (window.location.pathname !== '/'){
-    page.base('301-Final-Project');
-} 
+// if (window.location.pathname !== '/'){
+//     page.base('/301-Final-Project');
+// } 
+
+page.base('/301-Final-Project');
 
 // use this for local testing
 // page('/', app.weatherView.initHomePage);
