@@ -6,13 +6,14 @@ let weather = [];
 let __API_URL__ = 'https://accounts-weather-app.herokuapp.com';
 // let __API_URL__ = 'http://localhost:3000'
 
-function Weather(data) {
+function Weather(data, city) {
   this.temperature = data.currently.temperature;
   this.precipitation = data.currently.precipProbability;
   this.windspeed = data.currently.windSpeed;
   this.windgust = data.currently.windGust;
   this.cloudcover = data.currently.cloudCover * 100;
   this.summary = data.daily.summary;
+  this.city = city;
   
 };
 
@@ -27,25 +28,13 @@ function findAccounts(){
     .then(x => console.log(x[0]));
 }
 
-function appendWeather(data) {
-    console.log(data)
-  let ponyExpress = new Weather(data);
+function appendWeather(data,city) {
+    console.log(data, city)
+  let ponyExpress = new Weather(data, city);
   console.log(ponyExpress);
   $('#weather-display').empty()
   $("#weather-display").append(ponyExpress.toHtml());
 }
-
-//working code
-// function findLocation(zip) {
-//   return $.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
-//     // .then(results => JSON.parse(results.responseText))
-//     .then(results => console.log(results))
-//     .then(results => updateWeather(results.results[0].geometry.location.lat,results.results[0].geometry.location.lng));
-    
-// }
-
-
-
 
 function findLocation(zip){
 
@@ -57,10 +46,12 @@ function findLocation(zip){
       zip: zip,
     },
     success: function(results) {
-      let lat = JSON.parse(results.text).results[0].geometry.location.lat
-      let long = JSON.parse(results.text).results[0].geometry.location.lng
+      console.log(JSON.parse(results.text).results[0].formatted_address)
+      let lat = JSON.parse(results.text).results[0].geometry.location.lat;
+      let long = JSON.parse(results.text).results[0].geometry.location.lng;
+      let city = JSON.parse(results.text).results[0].formatted_address
 
-      updateWeather(lat,long)
+      updateWeather(lat,long, city)
     }
   });}
 
@@ -123,13 +114,13 @@ function createAccount(name, zip, email, password){
   });}
 
 
-function updateWeather(lat,long) {
+function updateWeather(lat, long, city) {
   console.log('lat: ',lat,'long: ',long);
   return $.getJSON(`${__API_URL__}/api/v1/weather`,{
     a: lat,
     b: long
   })
     .then(data => JSON.parse(data.text)) 
-    .then(data => appendWeather(data))
+    .then(data => appendWeather(data, city))
     .then(() => console.log('done'));
 };
